@@ -3,6 +3,8 @@ export interface ExtractedData {
   beneficiaryName: string;
   accountNumber: string;
   swiftCode: string;
+  country: string;
+  state: string;
   city: string;
   address: string;
   bankName: string;
@@ -23,11 +25,3 @@ export interface ProcessableFile {
   data?: ExtractedData;
   error?: string;
 }
-
-export type ComparisonResult = {
-  [K in keyof ExtractedData]: {
-    value1: string;
-    value2: string;
-    match: boolean;
-  }
-};
